@@ -1,8 +1,9 @@
 import React from 'react'
 
 export default function Navbar(props) {
+
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode} my-3`}>
     <div className="container-fluid">
       <a className="navbar-brand" href="/">{props.name}</a>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,10 +18,7 @@ export default function Navbar(props) {
             <a className="nav-link" href="/">About</a>
           </li>
         </ul>
-        <form className="d-flex" role="search">
-          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-          <button className="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <button type="button" onClick={props.enbDarkMode} className={`btn btn-primary btn-${props.mode==='light' ?'light':'dark'}`}>dark mode</button>
       </div>
     </div>
   </nav>
